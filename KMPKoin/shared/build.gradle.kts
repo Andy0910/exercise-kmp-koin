@@ -41,3 +41,8 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
 }
+dependencies {
+implementation(project.dependencies.platform(libs.koin.bom))
+implementation(libs.koin.core)
+implementation(libs.koin.compose.viewmodel)
+}
