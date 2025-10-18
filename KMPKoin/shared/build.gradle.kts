@@ -22,6 +22,9 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
+            implementation(project.dependencies.platform(libs.koin.bom))
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
             // put your Multiplatform dependencies here
         }
         commonTest.dependencies {
@@ -40,9 +43,4 @@ android {
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
-}
-dependencies {
-implementation(project.dependencies.platform(libs.koin.bom))
-implementation(libs.koin.core)
-implementation(libs.koin.compose.viewmodel)
 }
